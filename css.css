@@ -1,0 +1,17 @@
+body{
+
+}
+.\+ , .\-{
+	font-size: 30px;
+}
+.text{
+	font-size: 25px;
+}
+.length{
+	font-size: 20px;
+	width:50%;
+	margin:0 auto;	
+}
+a:hover{
+	text-decoration: none;
+}
