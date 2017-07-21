@@ -16,17 +16,16 @@ $(document).ready(function(){
 		$("#break_time").html(Number($("#break_time").text())-1);
 	});
 	$("#start").on("click",function(){
-		$("#pause,#reset").show();
+		$("#reset").show();
         sessionstart();
 		function breakstart(){
 			var mins=$("#break_time").text()-1;
 			var secs=60;
 			ongoing="It's Break time.Enjoy!";
 			var temp=setInterval(function(){
-			$("#clock").html('<div class="show" id=""><h2> '+ongoing+'</h2></div>'+'<div class="timer" id="">'+mins+
-				' : '+secs+'</div><div class="text-center" id="buttons">'+
-		'<a href="#" id="pause">Pause</a>'+'&nbsp;&nbsp;'+
-		'<a href="#" id="reset">Reset</a></div>');
+			$("#start").html('<div class="show" id="break_show">'+ongoing+'</div>'+'<div class="timer" id="">'+mins+
+				' : '+secs+'</div><div id="reset_button">'+
+		        '<a href="#" id="reset" >Reset</a></div>');
 			secs--;
 			if(secs===0)
 			{
@@ -38,6 +37,8 @@ $(document).ready(function(){
 				clearInterval(temp);
 				sessionstart();
 			}
+			
+
 		},1000);
 			
 		}
@@ -46,10 +47,9 @@ $(document).ready(function(){
 		var mins=$("#session_time").text()-1;
 		var secs=60;
 		var temp=setInterval(function(){
-			$("#clock").html('<div class="show" id=""><h2> '+ongoing+'</h2></div>'+'<div class="timer" id="">'+mins+
-				' : '+secs+'</div><div class="text-center" id="buttons">'+
-		'<a href="#" id="pause">Pause</a>'+'&nbsp;&nbsp;'+
-		'<a href="#" id="reset">Reset</a></div>');
+			$("#start").html('<div class="show" id="session_show">'+ongoing+'</div>'+'<div class="timer" id="">'+mins+
+				' : '+secs+'</div><div id="reset_button">'+
+		        '<a href="#" id="reset">Reset</a></div>');
 			secs--;
 			if(secs==0)
 			{
@@ -61,10 +61,15 @@ $(document).ready(function(){
 				clearInterval(temp);
 				breakstart();
 			}
+			
 		},1000);
 		
        }
     });
-    
+
+    $("#reset").on("click",function(){
+    	clearInterval(temp);
+    })
+
 
 });

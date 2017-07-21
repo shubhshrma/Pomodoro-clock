@@ -1,0 +1,81 @@
+body{
+background-image: url(http://answermandan.com/wp-content/uploads/Grey-website-background.png);
+  
+}
+#header{
+	margin-top: 50px;
+	font-size:80px;
+	font-family: 'Lobster', cursive;
+	color:#0066cc;
+}
+ #session,#break{
+ 	margin-top: 40px;
+ 	font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+}
+ 
+ #session{
+ 	color:#ff0000;
+ 	
+ }
+ #break{
+ 	color:#00ff66;
+ }
+a:hover{
+	text-decoration: none;
+}
+.\+ , .\-{
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+}
+.text{
+	font-size: 25px;
+}
+.length{
+	font-size: 20px;
+	width:50%;
+	margin:0 auto;	
+}
+.show{
+	margin-top:30px;
+}
+.timer{
+	font-size: 40px;
+	margin-top:30px;
+}
+a{
+	color:white;
+}
+a:hover{
+	text-decoration: none;
+}
+#start a{
+	color: #0066ff;
+	font-size: 50px;
+}
+#start a:hover{
+	color:blue;
+}
+#reset_button a{
+	color:#0066ff;
+    font-size:20px;
+}
+#break_show{
+	color:#00ff66
+}
+#session_show{
+	color:#ff0000;
+}
+.show{
+	font-size:40px;
+	font-family: 'Exo 2',sans-serif;
+}
+.timer{
+	color: white;
+	font-size:60px;
+	font-family:'Roboto',sans-serif;
+}
+#reset-button{
+	
+}
+
