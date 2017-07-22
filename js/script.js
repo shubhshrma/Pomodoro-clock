@@ -15,15 +15,16 @@ $(document).ready(function(){
 		if(Number($("#break_time").text())>1)
 		$("#break_time").html(Number($("#break_time").text())-1);
 	});
-	$("#start").on("click",function(){
-		$("#reset").show();
+	$("body").on('click','#start',function(){
+	    $("#start").hide();
+	    console.log(1);
         sessionstart();
 		function breakstart(){
 			var mins=$("#break_time").text()-1;
 			var secs=60;
 			ongoing="It's Break time.Enjoy!";
 			var temp=setInterval(function(){
-			$("#start").html('<div class="show" id="break_show">'+ongoing+'</div>'+'<div class="timer" id="">'+mins+
+			$("#clock").html('<div class="show" id="break_show">'+ongoing+'</div>'+'<div class="timer" id="">'+mins+
 				' : '+secs+'</div><div id="reset_button">'+
 		        '<a href="#" id="reset" >Reset</a></div>');
 			secs--;
@@ -37,17 +38,21 @@ $(document).ready(function(){
 				clearInterval(temp);
 				sessionstart();
 			}
-			
+			$("#reset").on("click",function(){
+    	        clearInterval(temp);
+                hideclock();
+    		});
 
 		},1000);
 			
 		}
 		function sessionstart(){
+
 		ongoing="Session is on.Focus!";
 		var mins=$("#session_time").text()-1;
 		var secs=60;
 		var temp=setInterval(function(){
-			$("#start").html('<div class="show" id="session_show">'+ongoing+'</div>'+'<div class="timer" id="">'+mins+
+			$("#clock").html('<div class="show" id="session_show">'+ongoing+'</div>'+'<div class="timer" id="">'+mins+
 				' : '+secs+'</div><div id="reset_button">'+
 		        '<a href="#" id="reset">Reset</a></div>');
 			secs--;
@@ -61,15 +66,21 @@ $(document).ready(function(){
 				clearInterval(temp);
 				breakstart();
 			}
+			$("#reset").on("click",function(){
+    	        clearInterval(temp);
+                hideclock();
+    		});
 			
 		},1000);
 		
        }
     });
-
-    $("#reset").on("click",function(){
-    	clearInterval(temp);
-    })
+    function hideclock()
+    {
+         $(".show,.timer,#reset").hide();
+         $("#clock").html('<div class="text-center" id="clock"><div id="start"><a href="#">Start</a></div></div>');
+    }
+    
 
 
 });

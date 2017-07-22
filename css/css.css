@@ -46,9 +46,7 @@ a:hover{
 a{
 	color:white;
 }
-a:hover{
-	text-decoration: none;
-}
+
 #start a{
 	color: #0066ff;
 	font-size: 50px;
@@ -59,6 +57,9 @@ a:hover{
 #reset_button a{
 	color:#0066ff;
     font-size:20px;
+}
+#reset_button a:hover{
+	color:blue;
 }
 #break_show{
 	color:#00ff66
